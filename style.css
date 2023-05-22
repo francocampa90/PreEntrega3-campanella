@@ -130,6 +130,8 @@
     margin-bottom: 20px;
 }
 
+
+
 .btn-1{
     display: inline-block;
     background-color: #F35200;
@@ -210,6 +212,10 @@ h2{
     color: #F35200 !important;
 }
 
+.img-carrito{
+    width: 30px;
+    color: white;
+}
 
 .btn-2{
     display: inline-block;
