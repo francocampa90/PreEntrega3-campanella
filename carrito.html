@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="menu container">
+            <a href="/index.html" class="logo">CoffeeMaker</a>
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="/img/menu.png" class="menu-icono" alt="">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="/index.html">Productos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+             <div>
+                <ul>
+                    <li class="submenu">
+                        <a href="/carrito.html"><img src="/img/car.svg" id="img-carrito" alt="carrito"></a> <span id="numerito" class="numerito">0</span>
+                        <!-- <div id="carrito">
+                            <table id="lista-carrito">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <a href="#" id="vacias-carrito" class="btn-2">Vaciar Carrito</a>
+                        </div> -->
+                    </li>
+                </ul>
+            </div> 
+        </div>
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>Carrito</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h2 class="titulo-principal">Carrito</h2>
+        <div class="contenedor-carrito">
+            <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío.</p>
+
+            <div id="carrito-productos" class="carrito-productos disabled">
+                <!-- Esto se va a completar con el JS -->
+            </div>
+
+            <div id="carrito-acciones" class="carrito-acciones disabled">
+                <div class="carrito-acciones-izquierda">
+                    <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar carrito</button>
+                </div>
+                <div class="carrito-acciones-derecha">
+                    <div class="carrito-acciones-total">
+                        <p>Total:</p>
+                        <p id="total">$0</p>
+                    </div>
+                    <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar ahora</button>
+                </div>
+            </div>
+            <p id="carrito-comprado" class="carrito-comprado disabled">Muchas gracias por tu compra.</i></p>
+        </div>
+    </main>
+    <script src="./js/carrito.js"></script>
+   
+</body>
+</html>

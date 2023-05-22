@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="menu container">
+            <a href="/index.html" class="logo">CoffeeMaker</a>
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="/img/menu.png" class="menu-icono" alt="">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div>  
+                <ul>
+                    <li class="submenu">
+                        <a href="/carrito.html"><img src="/img/car.svg" id="img-carrito" alt="carrito"></a> <span id="numerito" class="numerito">0</span>
+                        <!-- <div id="carrito">
+                            <table id="lista-carrito">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <a href="#" id="vacias-carrito" class="btn-2">Vaciar Carrito</a>
+                        </div> -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>CAFÉ EN GRANO</h1>
+                <p>
+                    Trabajamoscon cafeteros locales para traerte el mejor café natural a domicilio.
+                </p>
+                <a href="#" class="btn-1">cafe en grano</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="seccion-botones">
+            <div class="botones">
+                    <button id="todos" class="boton-categoria active">Todos</button>
+                    <button id="Arabica" class="boton-categoria">Arabica</button>
+                    <button id="Robusta" class="boton-categoria">Robusta</button>
+                    <button id="Liberica" class="boton-categoria">Liberica</button>
+                    <button id="Excelsa" class="boton-categoria">Excelsa</button>
+                    <button id="Oscuro" class="boton-categoria">Oscuro</button>
+            </div>
+        </section>
+        <section class="products containers" id="lista-1">
+            <h2 class="titulo-principal" id="titulo-principal">Cafes</h2>
+            <div id="contenedor-productos" class="contenedor-productos">
+                <!-- productos cargados en javascript -->
+            </div>
+        </section>
+    </main>
+    <script src="./js/app.js"></script>
+</body>
+</html>
