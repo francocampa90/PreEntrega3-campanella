@@ -1,134 +1,21 @@
-// PRODUCTOS
-const productos = [
-    // cafes
-    {
-        id: "Brasil",
-        titulo: "Brasil",
-        imagen: "./img/cafe1.png",
-        categoria: {
-            nombre: "Arabica",
-            id: "Arabica"
-        },
-        precio: 1000
-    },
-    {
-        id: "Colombia",
-        titulo: "Colombia",
-        imagen: "./img/cafe2.png",
-        categoria: {
-            nombre: "Robusta",
-            id: "Robusta"
-        },
-        precio: 1000
-    },
-    {
-        id: "Etiopia",
-        titulo: "Etiopia",
-        imagen: "./img/cafe3.png",
-        categoria: {
-            nombre: "Liberica",
-            id: "Liberica"
-        },
-        precio: 1000
-    },
-    {
-        id: "Dark-Roast",
-        titulo: "Dark Roast",
-        imagen: "./img/cafe4.png",
-        categoria: {
-            nombre: "Oscuro",
-            id: "Oscuro"
-        },
-        precio: 1000
-    },
-    {
-        id: "Light-Roast",
-        titulo: "Light Roast",
-        imagen: "./img/cafe5.png",
-        categoria: {
-            nombre: "Excelsa",
-            id: "Excelsa"
-        },
-        precio: 1000
-    },
-    {
-        id: "Venezuela",
-        titulo: "Venezuela",
-        imagen: "./img/cafe6.png",
-        categoria: {
-            nombre: "Arabica",
-            id: "Arabica"
-        },
-        precio: 1000
-    },
-    {
-        id: "Burundi",
-        titulo: "Burundi",
-        imagen: "./img/cafe7.png",
-        categoria: {
-            nombre: "Excelsa",
-            id: "Excelsa"
-        },
-        precio: 1000
-    },
-    {
-        id: "Roast",
-        titulo: "Roast",
-        imagen: "./img/cafe8.png",
-        categoria: {
-            nombre: "Robusta",
-            id: "Robusta"
-        },
-        precio: 1000
-    },
-    {
-        id: "Guatemala",
-        titulo: "Guatemala",
-        imagen: "./img/cafe9.png",
-        categoria: {
-            nombre: "Robusta",
-            id: "Robusta"
-        },
-        precio: 1000
-    },
-    {
-        id: "Mexico",
-        titulo: "Mexico",
-        imagen: "./img/cafe10.png",
-        categoria: {
-            nombre: "Liberica",
-            id: "Liberica"
-        },
-        precio: 1000
-    },
-    {
-        id: "Rwanda",
-        titulo: "Rwanda",
-        imagen: "./img/cafe11.png",
-        categoria: {
-            nombre: "Oscuro",
-            id: "Oscuro"
-        },
-        precio: 1000
-    },
-    {
-        id: "Sumatra",
-        titulo: "Sumatra",
-        imagen: "./img/cafe12.png",
-        categoria: {
-            nombre: "Arabica",
-            id: "Arabica"
-        },
-        precio: 1000
-    }
+let productos = [];
+
+fetch("./js/productos.json")
+.then(response => response.json())
+.then(data => {
+    productos = data;
+    cargarProductos(productos);
     
-];
+})
+
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".boton-categoria");
 const tituloPrincipal = document.querySelector("#titulo-principal");
 let botonesAgregar = document.querySelectorAll(".producto-agregar");
 const numerito = document.querySelector("#numerito");
+
+
 
 
 
@@ -155,7 +42,7 @@ function cargarProductos(productosElegidos){
     //console.log(botonesAgregar);
 }
 
-cargarProductos(productos);
+
 
 botonesCategorias.forEach(boton => { 
     boton.addEventListener("click", (e) => {
@@ -234,6 +121,25 @@ function agregarAlCarrito(e){
     actualizarNumerito();
 
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+
+    Toastify({
+        text: "Agregaste a tu carrito",
+        duration: 2000,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #F35200, #F35200)",
+          borderRadius: "0.5rem",
+        },
+        offset: {
+            x: '2rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: '3rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+          },
+        onClick: function(){} // Callback after click
+      }).showToast();
+
+
 }
 
 function actualizarNumerito(){
@@ -241,6 +147,55 @@ function actualizarNumerito(){
    // console.log(numerito);
     numerito.innerText = nuevoNumerito;
 }
+
+
+
+
+
+const monedaEl_one = document.getElementById('moneda-uno');
+const monedaEl_two = document.getElementById('moneda-dos');
+const cantidadEl_one = document.getElementById('cantidad-uno');
+const cantidadEl_two = document.getElementById('cantidad-dos');
+
+const cambioEl = document.getElementById('cambio');
+
+const tazaEl = document.getElementById('taza');
+
+
+
+
+
+
+async function calculate(){
+    const moneda_one = monedaEl_one.value;
+    const moneda_two = monedaEl_two.value;
+
+
+
+    const cambioapi = await fetch(`https://api.exchangerate-api.com/v4/latest/${moneda_one}`);
+    const data = await cambioapi.json();
+
+       const taza = data.rates[moneda_two];
+       cambioEl.innerText = `1 ${moneda_one} = ${taza} ${moneda_two}`;
+       cantidadEl_two.value = (cantidadEl_one.value * taza).toFixed(2);
+   
+    
+}
+
+monedaEl_one.addEventListener('change', calculate);
+cantidadEl_one.addEventListener('input', calculate);
+monedaEl_two.addEventListener('change', calculate);
+cantidadEl_two.addEventListener('input', calculate);
+
+taza.addEventListener('click', () =>{
+    const temp = monedaEl_one.value;
+    monedaEl_one.value = monedaEl_two.value;
+    monedaEl_two.value = temp;
+    calculate();
+} );
+
+
+calculate();
 
 
 

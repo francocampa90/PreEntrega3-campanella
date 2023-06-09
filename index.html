@@ -4,11 +4,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
-        <div class="menu container">
+        <div class="menu container hero">
             <a href="/index.html" class="logo">CoffeeMaker</a>
             <input type="checkbox" id="menu">
             <label for="menu">
@@ -22,24 +23,41 @@
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </nav>
-            <div>  
-                <ul>
-                    <li class="submenu">
-                        <a href="./carrito.html"><img src="./img/carrito1.png" id="img-carrito" class="img-carrito" alt="carrito"></a> <span id="numerito" class="numerito">0</span>
-                        <!-- <div id="carrito">
-                            <table id="lista-carrito">
-                                <thead>
-                                    <tr>
-                                        <th>Imagen</th>
-                                        <th>Nombre</th>
-                                        <th>Precio</th>
-                                    </tr>
-                                </thead>
-                            </table>
-                            <a href="#" id="vacias-carrito" class="btn-2">Vaciar Carrito</a>
-                        </div> -->
-                    </li>
-                </ul>
+            <div class="submenu">
+                <a href="./carrito.html"><img src="./img/carrito1.png" id="img-carrito" class="img-carrito" alt="carrito"></a> <span id="numerito" class="numerito">0</span>
+                
+                <div class="submenu-cambio">
+                    <div class="cambio">
+                        <div class="container">
+                            <div class="moneda">
+                                <!-- <p id="moneda-uno" value="EUR">EUR</p> -->
+                                <select id="moneda-uno">
+                                    <option value="ARS">ARS</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="USD" selected>USD</option>
+                                </select>
+                                <input type="number" id="cantidad-uno" placeholder="0"  value="1">
+                            </div>
+        
+                            <div class="taza-cambio-container">
+                                <button class="btn" id="taza">
+                                    cambio
+                                </button>
+                                <div class="cambio" id="cambio"> aca ba el tipo decambio</div>
+                            </div>
+                    
+                            <div class="moneda">
+                                <select id="moneda-dos">  
+                                    <option value="ARS">ARS</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="USD" selected>USD</option>
+                                </select>
+                                <input type="number" id="cantidad-dos" placeholder="0" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="header-content container">
@@ -70,6 +88,7 @@
             </div>
         </section>
     </main>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./js/app.js"></script>
 </body>
 </html>

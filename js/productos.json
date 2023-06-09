@@ -1,0 +1,123 @@
+ [
+    {
+        "id": "Brasil",
+        "titulo": "Brasil",
+        "imagen": "./img/cafe1.png",
+        "categoria": {
+            "nombre": "Arabica",
+            "id": "Arabica"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Colombia",
+        "titulo": "Colombia",
+        "imagen": "./img/cafe2.png",
+        "categoria": {
+            "nombre": "Robusta",
+            "id": "Robusta"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Etiopia",
+        "titulo": "Etiopia",
+        "imagen": "./img/cafe3.png",
+        "categoria": {
+            "nombre": "Liberica",
+            "id": "Liberica"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Dark-Roast",
+        "titulo": "Dark Roast",
+        "imagen": "./img/cafe4.png",
+        "categoria": {
+            "nombre": "Oscuro",
+            "id": "Oscuro"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Light-Roast",
+        "titulo": "Light Roast",
+        "imagen": "./img/cafe5.png",
+        "categoria": {
+            "nombre": "Excelsa",
+            "id": "Excelsa"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Venezuela",
+        "titulo": "Venezuela",
+        "imagen": "./img/cafe6.png",
+        "categoria": {
+            "nombre": "Arabica",
+            "id": "Arabica"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Burundi",
+        "titulo": "Burundi",
+        "imagen": "./img/cafe7.png",
+        "categoria": {
+            "nombre": "Excelsa",
+            "id": "Excelsa"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Roast",
+        "titulo": "Roast",
+        "imagen": "./img/cafe8.png",
+        "categoria": {
+            "nombre": "Robusta",
+            "id": "Robusta"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Guatemala",
+        "titulo": "Guatemala",
+        "imagen": "./img/cafe9.png",
+        "categoria": {
+            "nombre": "Robusta",
+            "id": "Robusta"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Mexico",
+        "titulo": "Mexico",
+        "imagen": "./img/cafe10.png",
+        "categoria": {
+            "nombre": "Liberica",
+            "id": "Liberica"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Rwanda",
+        "titulo": "Rwanda",
+        "imagen": "./img/cafe11.png",
+        "categoria": {
+            "nombre": "Oscuro",
+            "id": "Oscuro"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Sumatra",
+        "titulo": "Sumatra",
+        "imagen": "./img/cafe12.png",
+        "categoria": {
+            "nombre": "Arabica",
+            "id": "Arabica"
+        },
+        "precio": 1000
+    }
+    
+]
