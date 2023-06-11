@@ -275,49 +275,26 @@ function comprarCarrito() {
 
 
 
-const monedaEl_one = document.getElementById('moneda-uno');
-const monedaEl_two = document.getElementById('moneda-dos');
-const cantidadEl_one = document.getElementById('cantidad-uno');
-const cantidadEl_two = document.getElementById('cantidad-dos');
 
-const cambioEl = document.getElementById('cambio');
-
-const tazaEl = document.getElementById('taza');
-
-
-
-
-
-
-async function calculate(){
-    const moneda_one = monedaEl_one.value;
-    const moneda_two = monedaEl_two.value;
-
-
-
-    const cambioapi = await fetch(`https://api.exchangerate-api.com/v4/latest/${moneda_one}`);
-    const data = await cambioapi.json();
-
-       const taza = data.rates[moneda_two];
-       cambioEl.innerText = `1 ${moneda_one} = ${taza} ${moneda_two}`;
-       cantidadEl_two.value = (cantidadEl_one.value * taza).toFixed(2);
    
+fetch("https://api.currencyfreaks.com/latest?apikey=4b2ff0ae5ce44f66aa8934855f451bcc")
+
+  .then((result) => {
+
+    let myData = result.json();
+    // console.log(myData);
+    return myData;
+  })
+
+  .then((currency) => {
+    let cantidad = document.querySelector(".cantidad");
+    let arsprecio = document.querySelector(".ars span");
     
-}
-
-monedaEl_one.addEventListener('change', calculate);
-cantidadEl_one.addEventListener('input', calculate);
-monedaEl_two.addEventListener('change', calculate);
-cantidadEl_two.addEventListener('input', calculate);
-
-taza.addEventListener('click', () =>{
-    const temp = monedaEl_one.value;
-    monedaEl_one.value = monedaEl_two.value;
-    monedaEl_two.value = temp;
-    calculate();
-} );
-
-
-calculate();
+    arsprecio.innerHTML = Math.round(cantidad.innerHTML * currency.rates["ARS"]);
+    
+    // console.log(currency.rates);
+    //console.log(currency.rates["ARS"])
+    
+  });
 
 
