@@ -1,17 +1,19 @@
 let productos = [];
 
+async function fetchData() {
+    try {
+      const response = await fetch("./js/productos.json");
+      const data = await  response.json();
+        productos = data;
+        cargarProductos(productos);
+        console.log('Datos obtenidos:', data);
 
-const listaProductos = async () => {
-    const response = await  fetch("./js/productos.json")
-    const data = await  response.json();
-    productos = data;
-    cargarProductos(productos);
-
-}
-
-
-listaProductos();
-
+    } catch (error) {
+      console.log('Error al obtener los datos de los productos:', error);
+    }
+  }
+  
+  fetchData();
 
 
 
