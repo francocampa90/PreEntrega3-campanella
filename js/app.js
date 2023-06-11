@@ -6,7 +6,7 @@ async function fetchData() {
       const data = await  response.json();
         productos = data;
         cargarProductos(productos);
-        console.log('Datos obtenidos:', data);
+        //console.log('Datos obtenidos:', data);
 
     } catch (error) {
       console.log('Error al obtener los datos de los productos:', error);
@@ -175,6 +175,6 @@ fetch("https://api.currencyfreaks.com/latest?apikey=4b2ff0ae5ce44f66aa8934855f45
     arsprecio.innerHTML = Math.round(cantidad.innerHTML * currency.rates["ARS"]);
     
     // console.log(currency.rates);
-    console.log(currency.rates["ARS"]);
+    //console.log(currency.rates["ARS"]);
     
   });
